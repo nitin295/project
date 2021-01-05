@@ -1,0 +1,31 @@
+<section class="main-content" style="min-height: 600px;">
+    <h3>Login Page</h3>
+    <div class="span7">
+        <h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
+        <form action="/login" method="post" class="form-stacked">
+            <fieldset>
+             
+                <div class="control-group">
+                    <label class="control-label">Username</label>
+                    <div class="controls">
+                        <input type="text" name="username" placeholder="Enter your username" class="input-xlarge">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Password:</label>
+                    <div class="controls">
+                        <input type="password" name="password" placeholder="Enter your password" class="input-xlarge">
+                    </div>
+                </div>
+                <p style="color: red;">
+                    <%= message %>
+                </p>
+
+                <hr>
+                <div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit"
+                        value="Login"></div>
+            </fieldset>
+        </form>
+    </div>
+</section>

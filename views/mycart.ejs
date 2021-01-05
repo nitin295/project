@@ -1,0 +1,57 @@
+<style>
+    .row{
+        width: 100%;
+    }
+    .cart-box{
+        min-height: 150px;
+        width: 80%;
+        margin:10px auto;
+        padding: 5px;
+        background-color: #ccc;
+    }
+    .cart-box table{
+        width: 100%;
+
+    }
+    .cart-box table tr td{
+        border: 1px solid #000;
+    }
+</style>
+<h3>Items in Your Cart</h3>
+<div class="row" style="min-height: 600px;">
+    <div class="cart-box">
+        <table>
+            <tr>
+                <th>S.No.</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Remove</th>
+                <th>Product Price</th>
+            </tr>
+
+            <% 
+            var total_price = 0;
+            result.forEach(function(x, n){ 
+                
+                total_price += x.price;
+                %>
+
+                <tr>
+                    <td><%= n+1 %></td>
+                    <td><img style="height: 130px !important;" src="/products/<%= x.image %>" alt=""></td>
+                    <td><%= x.name %></td>
+                    <td><a href="/cart/remove/<%= x._id %>">Remove</a></td>
+                    <td><%= x.price %></td>
+                </tr>
+            <% }) %>
+
+
+        </table>
+        <br />
+        <br />
+        <h3>Total Price : <%= total_price %></h3>
+        <br />
+        <br />
+        
+    </div>
+</div>
